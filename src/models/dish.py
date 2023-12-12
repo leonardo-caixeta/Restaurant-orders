@@ -39,3 +39,13 @@ class Dish:
 
     def get_ingredients(self):
         return set(self.recipe.keys())
+
+
+dish = Dish('quiche', 11.99)
+queijo = Ingredient('queijo')
+farinha = Ingredient('farinha')
+massa = Ingredient('massa')
+dish.add_ingredient_dependency(queijo, 5)
+dish.add_ingredient_dependency(farinha, 4)
+dish.add_ingredient_dependency(massa, 8)
+print(dish.get_restrictions())
